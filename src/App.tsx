@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { OnboardingScreen } from "./components/OnboardingScreen";
 import { LandingPage } from "./components/LandingPage";
 import { Dashboard } from "./components/Dashboard";
 import { AddProduct } from "./components/AddProduct";
@@ -7,13 +8,17 @@ import { ArtistStore } from "./components/ArtistStore";
 import { ProductsPage } from "./components/ProductsPage";
 import { WebsiteBuilder } from "./components/WebsiteBuilder";
 
-type Screen = "landing" | "dashboard" | "addProduct" | "coven" | "store" | "products" | "websiteBuilder";
+type Screen = "onboarding" | "landing" | "dashboard" | "addProduct" | "coven" | "store" | "products" | "websiteBuilder";
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState<Screen>("landing");
+  const [currentScreen, setCurrentScreen] = useState<Screen>("onboarding");
 
   return (
     <div className="min-h-screen">
+      {currentScreen === "onboarding" && (
+        <OnboardingScreen onSignIn={() => setCurrentScreen("landing")} />
+      )}
+      
       {currentScreen === "landing" && (
         <LandingPage onStartTrial={() => setCurrentScreen("dashboard")} />
       )}
