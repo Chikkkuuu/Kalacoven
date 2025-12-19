@@ -14,8 +14,8 @@ export function OnboardingScreen({ onSignIn }: OnboardingScreenProps) {
       <div className="w-full max-w-md">
         {/* Logo and Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary mb-4">
-            <img src={logo} alt="KalaCoven Logo" className="w-12 h-12" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl">
+            <img src={logo} alt="KalaCoven Logo" className="w-16 h-16" />
           </div>
           <h1 className="text-3xl mb-2">Welcome to KalaCoven</h1>
           <p className="text-muted-foreground">
